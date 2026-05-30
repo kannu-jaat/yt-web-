@@ -49,6 +49,11 @@ public class MainActivity extends Activity {
 		web = findViewById(R.id.web);
 		web.getSettings().setJavaScriptEnabled(true);
 		web.getSettings().setSupportZoom(true);
+
+// 🔥 WA WEB KE LIYE DESKTOP USER-AGENT ZAROORI HAI 🔥
+        String desktopUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36";
+        web.getSettings().setUserAgentString(desktopUserAgent);
+
 		
 		web.setWebViewClient(new WebViewClient() {
 			@Override
@@ -66,7 +71,7 @@ public class MainActivity extends Activity {
 			}
 		});
 
-		web.loadUrl("https://m.youtube.com/");
+		web.loadUrl("https://web.whatsapp.com/");
 		web.getSettings().setDomStorageEnabled(true); web.getSettings().setDatabaseEnabled(true);
 		web.addJavascriptInterface(new WebAppInterface(this), "Android");
 		web.setWebChromeClient(new CustomWebClient());
